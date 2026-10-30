@@ -1,0 +1,27 @@
+services:
+  sentinel:
+    build: .
+    container_name: sentinel
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_PATH: /data/sentinel.db
+      # Alerting (optional):
+      ALERT_EMAIL_HOST: ""
+      ALERT_EMAIL_PORT: "587"
+      ALERT_EMAIL_USER: ""
+      ALERT_EMAIL_PASSWORD: ""
+      ALERT_EMAIL_FROM: "sentinel@example.com"
+      ALERT_EMAIL_USE_TLS: "true"
+      DEFAULT_WEBHOOK_URL: ""
+    volumes:
+      - sentinel-data:/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/health')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  sentinel-data:

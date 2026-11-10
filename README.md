@@ -2,7 +2,7 @@
 
 ### Full-Stack Uptime Monitoring & Anomaly Detection Platform
 
-PulseOps is a self-hosted HTTP monitoring platform that tracks endpoint availability and response latency, evaluates configurable alert rules, and manages incidents through an automated lifecycle. It includes a React dashboard for monitoring services, visualizing performance metrics, and managing alerts, along with an Isolation Forest-based anomaly detection component.
+Sentinel is a self-hosted HTTP monitoring platform that tracks endpoint availability and response latency, evaluates configurable alert rules, and manages incidents through an automated lifecycle. It includes a React dashboard for monitoring services, visualizing performance metrics, and managing alerts, along with an Isolation Forest-based anomaly detection component.
 
 ## Features
 
